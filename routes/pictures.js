@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const pictureController = require("../controllers/pictureController")
 var authenticate = require("../middleware/authenticate")
-router.get('/',authenticate, pictureController.pictures_list);
+router.get('/', pictureController.pictures_list);
 
 router.get('/create', pictureController.picture_create_get);
 router.post('/create', pictureController.picture_create_post);

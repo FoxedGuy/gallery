@@ -23,11 +23,13 @@ exports.users_list = function(req,res){
 exports.user_create_get = function(req,res){
     res.render('users/register_user')
 }
+
 exports.user_create_post = function(req,res,next){
+    console.log(req.body)
     bcrypt.hash(req.body.password, 10, function(err, hash){
         if(err){
             return res.status(500).json({
-                error: err
+                error: "Error hashing password"
         })
         }
         let newUser = new User({

@@ -8,6 +8,7 @@ var path = require('path');
 
 app.use(express.static(path.join(__dirname,"public")))
 app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 app.use('/users', usersRoutes);
 app.use('/pictures',picturesRoutes)
 app.engine('hbs', hbs.engine({extreme: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/',

@@ -4,3 +4,17 @@ Name: {{item.name}}
 Description: {{item.description}}
 <br/>
 <img src="../{{item.url}}/{{item.name}}.png"/>
+<center>
+    <div>
+        <form action="../comments/add/{{item.id}}" method="post">
+            <input type="hidden" name="picture_id" value="{{item.id}}"/>
+            <div class="form-group">
+                <label for="user">Author</label>
+                <input type="text" class="form-control" id="user" name="user" placeholder="Enter author">
+                <label for="comment">Comment</label>
+                <input type="text" class="form-control" id="comment" name="comment" placeholder="Enter comment">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+        </form>
+    </div>
+</center>
